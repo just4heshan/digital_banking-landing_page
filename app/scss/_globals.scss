@@ -1,0 +1,61 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', san s-serif;
+    font-size: $font-md;
+    line-height: 1.3;
+}
+
+a, a:visited, :hover {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-cn {
+        justify-content: center;
+    }
+
+    &-ai-cn {
+        align-items: center;
+    }
+}
+
+// Buttons
+button, .button {
+    padding: 0.675rem 1.575rem;
+    background-image: linear-gradient(90deg, $limeGreen, 60%, $brightCray);
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    color: $white;
+    font-size: $font-sm;
+    font-weight: 600;
+}
+
+// Visibility
+.hide-for-mobile {
+    @include breakpoints-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoints-up(large) {
+        display: none;
+    }
+}

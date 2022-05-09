@@ -1,0 +1,32 @@
+.header {
+    padding: 24px;
+
+    &__logo {
+
+    }
+
+    &__menu { //Hamberger menu for mobile
+        > span {
+            display: block;
+            margin: 0;
+            width: 22px;
+            height: 2px;
+            background-color: $darkBlue;
+
+            &:not(:last-child) {
+                margin-bottom: 3px;
+            }
+        }    
+    }
+
+    &__links {
+        a {
+            font-size: $font-sm;
+            color: $grayishBlue;
+            &:not(:last-child){
+                padding-right: 30px;    
+            }
+        }
+    }
+
+}
