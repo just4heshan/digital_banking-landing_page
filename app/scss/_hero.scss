@@ -1,0 +1,34 @@
+.hero {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    &__desc {
+        padding: 180px 160px;
+    }
+
+    h1 {
+        color: $darkBlue;
+        font-weight: 300;
+    }
+
+    p {
+        color: $grayishBlue;
+        padding-bottom: 25px;
+    }
+
+    &__img1 {
+        position: absolute;
+        top: -250px;
+        left: 600px;
+    }
+
+    &__img2  {
+        position: absolute;
+        top: -100px;
+        left: 780px;
+    }
+}

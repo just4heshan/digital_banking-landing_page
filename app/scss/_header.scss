@@ -1,8 +1,14 @@
 .header {
-    padding: 24px;
+    background-color: $veryLightGray;
+
+    nav {
+        background-color: $white;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
 
     &__logo {
-
+        padding-left: 180px;
     }
 
     &__menu { //Hamberger menu for mobile
@@ -27,6 +33,10 @@
                 padding-right: 30px;    
             }
         }
+    }
+
+    button {
+        margin-right: 180px;
     }
 
 }
