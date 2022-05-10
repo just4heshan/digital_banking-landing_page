@@ -82,8 +82,7 @@ button, .button {
 
 .header nav {
   background-color: white;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  height: 10vh;
 }
 
 .header__logo {
@@ -103,12 +102,39 @@ button, .button {
 }
 
 .header__links a {
+  position: relative;
   font-size: 0.875rem;
   color: #9698a6;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+  padding: 0;
 }
 
 .header__links a:not(:last-child) {
-  padding-right: 30px;
+  padding-right: 32px;
+}
+
+.header__links a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 5px;
+  bottom: -4vh;
+  opacity: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), color-stop(60%), to(#2bb7da));
+  background-image: linear-gradient(90deg, #31d35c, 60%, #2bb7da);
+  -webkit-transition: opacity 800ms ease-in-out;
+  transition: opacity 800ms ease-in-out;
+}
+
+.header__links a:hover {
+  color: #2d314d;
+}
+
+.header__links a:hover::before {
+  opacity: 1;
 }
 
 .header button {
@@ -124,7 +150,7 @@ button, .button {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 
