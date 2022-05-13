@@ -61,7 +61,13 @@ button, .button {
   cursor: pointer;
   color: white;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+button:hover, .button:hover {
+  opacity: 0.55;
 }
 
 @media (max-width: 63.9375em) {
@@ -86,19 +92,43 @@ button, .button {
 }
 
 .header__logo {
-  padding-left: 180px;
+  margin-left: 180px;
 }
 
-.header__menu > span {
+.header__toggle {
+  margin-right: 32px;
+}
+
+.header__toggle > span {
   display: block;
   margin: 0;
   width: 22px;
   height: 2px;
   background-color: #2d314d;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-transform-origin: 4px 1px;
+          transform-origin: 4px 1px;
 }
 
-.header__menu > span:not(:last-child) {
-  margin-bottom: 3px;
+.header__toggle > span:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.header__toggle.open > span:nth-child(1) {
+  margin: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header__toggle.open > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__toggle.open > span:nth-child(3) {
+  margin-bottom: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .header__links a {
@@ -111,7 +141,7 @@ button, .button {
 }
 
 .header__links a:not(:last-child) {
-  padding-right: 32px;
+  margin-right: 32px;
 }
 
 .header__links a::before {
@@ -120,13 +150,14 @@ button, .button {
   position: absolute;
   left: 0;
   right: 0;
+  bottom: -3.9vh;
   height: 5px;
-  bottom: -4vh;
+  border-radius: 50px;
   opacity: 0;
   background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), color-stop(60%), to(#2bb7da));
   background-image: linear-gradient(90deg, #31d35c, 60%, #2bb7da);
-  -webkit-transition: opacity 800ms ease-in-out;
-  transition: opacity 800ms ease-in-out;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
 }
 
 .header__links a:hover {
@@ -170,13 +201,22 @@ button, .button {
 
 .hero__img1 {
   position: absolute;
-  top: -250px;
+  top: -200px;
   left: 600px;
+  z-index: 1;
 }
 
 .hero__img2 {
   position: absolute;
   top: -100px;
   left: 780px;
+  z-index: 2;
+}
+
+.desc {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f4f6;
+  z-index: 1;
 }
 /*# sourceMappingURL=styles.css.map */
